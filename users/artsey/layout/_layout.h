@@ -37,6 +37,9 @@
 #ifdef KEYBOARD_crkbd_rev1
 #include "boards/crkbd_rev1.h"
 #endif
+#ifdef KEYBOARD_planck_rev6
+#include "boards/planck_rev6.h"
+#endif
 #ifdef KEYBOARD_gboards_gergo
 #include "boards/gboards_gergo.h"
 #endif
@@ -83,6 +86,9 @@
 #ifdef KEYBOARD_crkbd_rev1
 #define LAYOUT_artsey_wrapper(...) LAYOUT_split_3x6_3(__VA_ARGS__)
 #else
+#ifdef KEYBOARD_planck_rev6
+#define LAYOUT_artsey_wrapper(...) LAYOUT_planck_grid(__VA_ARGS__)
+#else
 #ifdef KEYBOARD_gboards_gergo
 #define LAYOUT_artsey_wrapper(...) LAYOUT_gergo(__VA_ARGS__)
 #else
@@ -108,6 +114,7 @@
 #endif // KEYBOARD_minidox_rev1
 #endif // KEYBOARD_faunchpad
 #endif // KEYBOARD_gboards_gergo
+#endif // KEYBOARD_planck_rev6
 #endif // KEYBOARD_crkbd_rev1
 
 // Allow proper auto selection of std size via keymaps

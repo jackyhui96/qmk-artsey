@@ -1,6 +1,6 @@
 name: Build
 
-on: 
+on:
   push:
     branches:
       - main
@@ -16,96 +16,102 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - layout: artsey_thepaintbrush
-            hand: left
-            size: std
-          - layout: artsey_thepaintbrush
-            hand: right
-            size: std
-          - layout: faunchpad
-            hand: left
-            size: std
-          - layout: faunchpad
-            hand: right
-            size: std
-          - layout: ai03_soyuz
-            hand: left
-            size: std
-          - layout: ai03_soyuz
-            hand: right
-            size: std
-          - layout: geekboards_macropad_v2
-            hand: left
-            size: std
-          - layout: geekboards_macropad_v2
-            hand: right
-            size: std
-          - layout: crkbd_rev1
-            hand: left
-            size: big
-          - layout: crkbd_rev1
-            hand: right
-            size: big
-          - layout: gboards_gergo
-            hand: left
-            size: big
-          - layout: gboards_gergo
-            hand: right
-            size: big
-          - layout: ferris_sweep
-            hand: left
-            size: big
-          - layout: ferris_sweep
-            hand: right
-            size: big
-          - layout: draculad
-            hand: left
-            size: big
-          - layout: draculad
-            hand: right
-            size: big
-          - layout: boardsource_microdox
-            hand: left
-            size: big
-          - layout: boardsource_microdox
-            hand: right
-            size: big
-          - layout: splitkb_kyria_rev2
-            hand: right
-            size: big
-          - layout: splitkb_kyria_rev2
-            hand: left
-            size: big
-          - layout: crkbd_rev1
-            hand: left
-            size: 40p
-          - layout: crkbd_rev1
-            hand: right
-            size: 40p
-          - layout: ferris_sweep
-            hand: left
-            size: 40p
-          - layout: ferris_sweep
-            hand: right
-            size: 40p
-          - layout: draculad
+          # - layout: artsey_thepaintbrush
+          #   hand: left
+          #   size: std
+          # - layout: artsey_thepaintbrush
+          #   hand: right
+          #   size: std
+          # - layout: faunchpad
+          #   hand: left
+          #   size: std
+          # - layout: faunchpad
+          #   hand: right
+          #   size: std
+          # - layout: ai03_soyuz
+          #   hand: left
+          #   size: std
+          # - layout: ai03_soyuz
+          #   hand: right
+          #   size: std
+          # - layout: geekboards_macropad_v2
+          #   hand: left
+          #   size: std
+          # - layout: geekboards_macropad_v2
+          #   hand: right
+          #   size: std
+          # - layout: crkbd_rev1
+          #   hand: left
+          #   size: big
+          # - layout: crkbd_rev1
+          #   hand: right
+          #   size: big
+          # - layout: gboards_gergo
+          #   hand: left
+          #   size: big
+          # - layout: gboards_gergo
+          #   hand: right
+          #   size: big
+          # - layout: ferris_sweep
+          #   hand: left
+          #   size: big
+          # - layout: ferris_sweep
+          #   hand: right
+          #   size: big
+          # - layout: draculad
+          #   hand: left
+          #   size: big
+          # - layout: draculad
+          #   hand: right
+          #   size: big
+          # - layout: boardsource_microdox
+          #   hand: left
+          #   size: big
+          # - layout: boardsource_microdox
+          #   hand: right
+          #   size: big
+          # - layout: splitkb_kyria_rev2
+          #   hand: right
+          #   size: big
+          # - layout: splitkb_kyria_rev2
+          #   hand: left
+          #   size: big
+          # - layout: crkbd_rev1
+          #   hand: left
+          #   size: 40p
+          # - layout: crkbd_rev1
+          #   hand: right
+          #   size: 40p
+          - layout: planck_rev6
             hand: left
             size: 40p
-          - layout: draculad
+          - layout: planck_rev6
             hand: right
             size: 40p
-          - layout: boardsource_microdox
-            hand: left
-            size: 40p
-          - layout: boardsource_microdox
-            hand: right
-            size: 40p
-          - layout: splitkb_kyria_rev2
-            hand: right
-            size: 40p
-          - layout: splitkb_kyria_rev2
-            hand: left
-            size: 40p
+          # - layout: ferris_sweep
+          #   hand: left
+          #   size: 40p
+          # - layout: ferris_sweep
+          #   hand: right
+          #   size: 40p
+          # - layout: draculad
+          #   hand: left
+          #   size: 40p
+          # - layout: draculad
+          #   hand: right
+          #   size: 40p
+          # - layout: boardsource_microdox
+          #   hand: left
+          #   size: 40p
+          # - layout: boardsource_microdox
+          #   hand: right
+          #   size: 40p
+          # - layout: splitkb_kyria_rev2
+          #   hand: right
+          #   size: 40p
+          # - layout: splitkb_kyria_rev2
+          #   hand: left
+          #   size: 40p
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -118,12 +124,12 @@ jobs:
           key: ${{ env.cache-name }}-${{ matrix.layout }}-${{ matrix.size }}-${{ matrix.hand }}
       - name: Update QMK Sources
         run: |
-            if [ -d /qmk_firmware/.git ]; 
-            then 
+            if [ -d /qmk_firmware/.git ];
+            then
                 cd /qmk_firmware;
-                git pull; 
-            else 
-                git clone https://github.com/qmk/qmk_firmware.git /qmk_firmware/; 
+                git pull;
+            else
+                git clone https://github.com/qmk/qmk_firmware.git /qmk_firmware/;
             fi
             if [ ! -d /qmk_firmware/keyboards/artsey ];
             then
@@ -150,12 +156,14 @@ jobs:
       - name: Debug - ls build artifact folder
         run: ls /qmk_firmware/.build
       - name: Prep artifacts
-        run: cp /qmk_firmware/.build/${{ matrix.layout }}_artsey.hex /qmk_firmware/.build/artsey-${{ matrix.layout }}-${{ matrix.size }}-${{ matrix.hand }}.hex 
+        run: |
+            cp /qmk_firmware/.build/${{ matrix.layout }}_artsey.hex /qmk_firmware/.build/artsey-${{ matrix.layout }}-${{ matrix.size }}-${{ matrix.hand }}.hex
+            cp /qmk_firmware/.build/${{ matrix.layout }}_artsey.bin /qmk_firmware/.build/artsey-${{ matrix.layout }}-${{ matrix.size }}-${{ matrix.hand }}.bin
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: "artsey-${{ matrix.layout }}-${{ matrix.size }}-${{ matrix.hand }}.hex"
-          path: "/qmk_firmware/.build/artsey-${{ matrix.layout }}-${{ matrix.size }}-${{ matrix.hand }}.hex"
+          name: "artsey-${{ matrix.layout }}-${{ matrix.size }}-${{ matrix.hand }}.bin"
+          path: "/qmk_firmware/.build/artsey-${{ matrix.layout }}-${{ matrix.size }}-${{ matrix.hand }}.bin"
           if-no-files-found: error
           retention-days: 14
   release:
