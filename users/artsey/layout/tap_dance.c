@@ -67,7 +67,7 @@ void dance_slsh_bk_fw_finished(qk_tap_dance_state_t *state, void *user_data) {
             register_code(KC_SLSH);
             break;
         case TD_TRIPLE_SINGLE_TAP:
-            register_code(KC_BSLS);
+            register_code(KC_NUBS);
             break;
         default:
             break;
@@ -83,7 +83,7 @@ void dance_slsh_bk_fw_reset(qk_tap_dance_state_t *state, void *user_data) {
             unregister_code(KC_SLSH);
             break;
         case TD_TRIPLE_SINGLE_TAP:
-            unregister_code(KC_BSLS);
+            unregister_code(KC_NUBS);
             break;
         default:
             break;
@@ -102,7 +102,7 @@ void dance_at_equal_finished(qk_tap_dance_state_t *state, void *user_data) {
             register_code(KC_EQUAL);
             break;
         case TD_TRIPLE_SINGLE_TAP:
-            register_code16(KC_AT);
+            register_code16(S(KC_2));
             break;
         default:
             break;
@@ -118,7 +118,7 @@ void dance_at_equal_reset(qk_tap_dance_state_t *state, void *user_data) {
             unregister_code(KC_EQUAL);
             break;
         case TD_TRIPLE_SINGLE_TAP:
-            unregister_code16(KC_AT);
+            unregister_code16(S(KC_2));
             break;
         default:
             break;

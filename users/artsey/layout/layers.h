@@ -51,7 +51,7 @@ STD_TRAILING_NONES
 #ifndef ARTSEY_STD_LAYER_SYM_LEFT
 #define ARTSEY_STD_LAYER_SYM_LEFT \
 STD_LEADING_NONES \
-KC_GRV,           KC_SCLN,          KC_BSLS,          KC_EXLM,          \
+KC_GRV,           KC_SCLN,          KC_NUBS,          KC_EXLM,          \
 STD_BETWEEN_ROW_ONE_TWO_NONES \
 KC_EQL,           KC_MINS,          KC_QUES,          KC_TRNS \
 STD_TRAILING_NONES
@@ -114,7 +114,7 @@ STD_TRAILING_NONES
 #ifndef ARTSEY_STD_LAYER_SYM_RIGHT
 #define ARTSEY_STD_LAYER_SYM_RIGHT \
 STD_LEADING_NONES \
-KC_EXLM,          KC_BSLS,          KC_SCLN,          KC_GRV,           \
+KC_EXLM,          KC_NUBS,          KC_SCLN,          KC_GRV,           \
 STD_BETWEEN_ROW_ONE_TWO_NONES \
 KC_TRNS,          KC_QUES,          KC_MINS,          KC_EQL \
 STD_TRAILING_NONES
@@ -157,7 +157,7 @@ LT(LAYER_ID_NUMBERS, KC_S),             KC_T,             KC_R,             LT(L
 BIG_BETWEEN_ROW_ONE_TWO_NONES \
 LT(LAYER_ID_CUSTOM, KC_O),              KC_I,             KC_Y,             LT(LAYER_ID_SYMBOLS, KC_E),             OSM_SHIFT,          \
 BIG_BETWEEN_ROW_TWO_THREE_NONES \
-LALT_T(OSM_CTRL),                        KC_AT,            KC_DEL,           KC_EQL,                                 KC_TAB,           \
+LALT_T(OSM_CTRL),                        S(KC_2),            KC_DEL,           KC_EQL,                                 KC_TAB,           \
 BIG_BETWEEN_ROW_THREE_THUMBS_NONES \
 ARTSEY_BIG_LAYER_BASE_LEFT_THUMBS \
 BIG_TRAILING_NONES
@@ -213,7 +213,7 @@ BIG_TRAILING_NONES
 
 #define ARTSEY_BIG_LAYER_SYM_LEFT \
 BIG_LEADING_NONES \
-KC_GRV,           KC_SCLN,          KC_BSLS,          KC_EXLM,          KC_NO,            \
+KC_GRV,           KC_SCLN,          KC_NUBS,          KC_EXLM,          KC_NO,            \
 BIG_BETWEEN_ROW_ONE_TWO_NONES \
 KC_EQL,           KC_MINS,          KC_QUES,          KC_TRNS,          KC_NO,            \
 BIG_BETWEEN_ROW_TWO_THREE_NONES \
@@ -253,9 +253,9 @@ BIG_TRAILING_NONES
 
 #define ARTSEY_BIG_LAYER_CUS_LEFT \
 BIG_LEADING_NONES \
-KC_NO,            KC_VOLU,          KC_INS,           KC_MUTE,          KC_NO,            \
+KC_NO,            C(KC_Z),          KC_INS,           C(KC_Y),          KC_NO,            \
 BIG_BETWEEN_ROW_ONE_TWO_NONES \
-KC_TRNS,          KC_VOLD,          KC_PSCR,          KC_RSFT,          KC_NO,            \
+KC_TRNS,          C(KC_X),          C(KC_C),          C(KC_V),          KC_NO,            \
 BIG_BETWEEN_ROW_TWO_THREE_NONES \
 KC_NO,            KC_NO,            KC_NO,            KC_NO,            KC_NO,            \
 BIG_BETWEEN_ROW_THREE_THUMBS_NONES \
@@ -293,11 +293,11 @@ BIG_TRAILING_NONES
 
 #define ARTSEY_BIG_LAYER_BIG_SYM_LEFT \
 BIG_LEADING_NONES \
-KC_CIRC,          KC_LCBR,          KC_RCBR,          KC_HASH,          KC_GRV,           \
+KC_CIRC,          KC_LCBR,          KC_RCBR,          KC_NUHS,          KC_GRV,           \
 BIG_BETWEEN_ROW_ONE_TWO_NONES \
-KC_AMPR,          KC_LPRN,          KC_RPRN,          KC_DLR,           KC_BSLS,          \
+KC_AMPR,          KC_LPRN,          KC_RPRN,          KC_DLR,           KC_NUBS,          \
 BIG_BETWEEN_ROW_TWO_THREE_NONES \
-KC_ASTR,          KC_LBRC,          KC_RBRC,          KC_PERC,          KC_PIPE,          \
+KC_ASTR,          KC_LBRC,          KC_RBRC,          KC_PERC,          S(KC_NUBS),          \
 BIG_BETWEEN_ROW_THREE_THUMBS_NONES \
 ARTSEY_BIG_LAYER_BIG_SYM_LEFT_THUMBS \
 BIG_TRAILING_NONES
@@ -343,7 +343,7 @@ ARTSEY_MINUS,     LT(LAYER_ID_PARENTHETICALS, KC_A),             KC_R,          
 BIG_BETWEEN_ROW_ONE_TWO_NONES \
 OSM_SHIFT,          LT(LAYER_ID_SYMBOLS, KC_E),                    KC_Y,             KC_I,             LT(LAYER_ID_CUSTOM, KC_O),              \
 BIG_BETWEEN_ROW_TWO_THREE_NONES \
-KC_TAB,           KC_EQL,                    KC_DEL,           KC_AT,            OSM_CTRL,          \
+KC_TAB,           KC_EQL,                    KC_DEL,           S(KC_2),            OSM_CTRL,          \
 BIG_BETWEEN_ROW_THREE_THUMBS_NONES \
 ARTSEY_BIG_LAYER_BASE_RIGHT_THUMBS \
 BIG_TRAILING_NONES
@@ -398,7 +398,7 @@ BIG_TRAILING_NONES
 
 #define ARTSEY_BIG_LAYER_SYM_RIGHT \
 BIG_LEADING_NONES \
-KC_EXLM,          KC_BSLS,          KC_SCLN,          KC_GRV,           KC_NO,            \
+KC_EXLM,          KC_NUBS,          KC_SCLN,          KC_GRV,           KC_NO,            \
 BIG_BETWEEN_ROW_ONE_TWO_NONES \
 KC_TRNS,          KC_QUES,          KC_MINS,          KC_EQL,           KC_NO,            \
 BIG_BETWEEN_ROW_TWO_THREE_NONES \
@@ -478,11 +478,11 @@ BIG_TRAILING_NONES
 
 #define ARTSEY_BIG_LAYER_BIG_SYM_RIGHT \
 BIG_LEADING_NONES \
-KC_GRV,           KC_HASH,          KC_LCBR,          KC_RCBR,          KC_CIRC,          \
+KC_GRV,           KC_NUHS,          KC_LCBR,          KC_RCBR,          KC_CIRC,          \
 BIG_BETWEEN_ROW_ONE_TWO_NONES \
-KC_BSLS,          KC_DLR,           KC_LPRN,          KC_RPRN,          KC_AMPR,          \
+KC_NUBS,          KC_DLR,           KC_LPRN,          KC_RPRN,          KC_AMPR,          \
 BIG_BETWEEN_ROW_TWO_THREE_NONES \
-KC_PIPE,          KC_PERC,          KC_LBRC,          KC_RBRC,          KC_ASTR,          \
+S(KC_NUBS),          KC_PERC,          KC_LBRC,          KC_RBRC,          KC_ASTR,          \
 BIG_BETWEEN_ROW_THREE_THUMBS_NONES \
 ARTSEY_BIG_LAYER_BIG_SYM_RIGHT_THUMBS \
 BIG_TRAILING_NONES
