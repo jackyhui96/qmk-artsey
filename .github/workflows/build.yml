@@ -84,10 +84,10 @@ jobs:
           #   size: 40p
           - layout: planck_rev6
             hand: left
-            size: 40p
+            size: big
           - layout: planck_rev6
             hand: right
-            size: 40p
+            size: big
           # - layout: ferris_sweep
           #   hand: left
           #   size: 40p
