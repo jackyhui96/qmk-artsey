@@ -157,7 +157,7 @@ LT(LAYER_ID_NUMBERS, KC_S),             KC_T,             KC_R,             LT(L
 BIG_BETWEEN_ROW_ONE_TWO_NONES \
 LT(LAYER_ID_CUSTOM, KC_O),              KC_I,             KC_Y,             LT(LAYER_ID_SYMBOLS, KC_E),             OSM_SHIFT,          \
 BIG_BETWEEN_ROW_TWO_THREE_NONES \
-OSM_ALT,                        S(KC_QUOT),            KC_DEL,           KC_EQL,                                 KC_TAB,           \
+OSM_ALT,                        KC_QUOT,            KC_DEL,           KC_EQL,                                 KC_TAB,           \
 BIG_BETWEEN_ROW_THREE_THUMBS_NONES \
 ARTSEY_BIG_LAYER_BASE_LEFT_THUMBS \
 BIG_TRAILING_NONES
